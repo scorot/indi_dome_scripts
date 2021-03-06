@@ -9,8 +9,16 @@ I motorised my roll on roof with a garage door motor. I used an Avidsen motor li
 On my raspberry pi I pluged a relay board like this : https://www.amazon.fr/gp/product/B0771HH6J6/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1. Then I soldered the wires on the motor control board on the push button pins and attacehd them to the CH1 (open button) and CH2 (close button) of the board. 
 
 ## How the scripts work 
-The scripts in this repository uses the default GPIO pin numbers assigned to this relay board. The relays acts just as if some one pushes the open and close button.
+The scripts in this repository uses the default GPIO pin numbers assigned to this relay board. The relays acts just as if some one pushes the open and close button. The relay Channels and corresponding pins number are the following :
 
-## Install
+- CH1 -> pin 35
+- CH2 -> pin 37
+- CH3 -> pin 38
+- CH4 -> pin 40
+
+
+## Install and usage
 
 Simply put all the python file in the /usr/share/indi/scripts directory. This location and the names of the scripts are the defaut values. Thus the Dome Scripting Gateway should find the files as exepected and should not be tuned.
+
+Noce the diver is up and connected the only thin g you have to use are the park and Unpark buttons. The open and close buttons are not used since they are effective on the shutter which is only relevent for a real rotary dome, not a roll on roof.
