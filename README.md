@@ -1,12 +1,12 @@
 # indi_dome_scripting
 
-This repository containts the python script files I use to open and close my observatory roof with Kstars/[Ekos](https://www.indilib.org/individuals/ekos-kstars.html) using the [Dome Scripting Gateway indi driver](https://www.indilib.org/domes.html) and a prebuild garare door motor. The advantage of using the garage door prebuild system, is that there is no need to care about the programming of the motor itself. 
+This repository containts the python script files I use to open and close my observatory roof with Kstars/[Ekos](https://www.indilib.org/individuals/ekos-kstars.html) using the [Dome Scripting Gateway indi driver](https://www.indilib.org/domes.html) and a prebuild garage door motor. The advantage of using the garage door prebuild system, is that there is no need to care about the programming of the motor itself. 
 
 
 ## What you need for those scripts
 
 What you need is :
- * a garage door motor (I used an Avidsen motor like this [one](https://www.avidsen.com/?view=product&lang=en_US&product_id=484))
+ * a garage door motor (I used an Avidsen motor like this [one](https://www.avidsen.com/en/brand-avidsen/garage-door-motorization/ref-114957))
  * a Raspberrypi
  * a relay board like this [one](https://www.amazon.fr/gp/product/B0771HH6J6/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 
