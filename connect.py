@@ -7,6 +7,7 @@
 #
 
 import sys
+import os.path
 
 import RPi.GPIO as GPIO
 import time
@@ -25,15 +26,35 @@ GPIO.cleanup()
 
 state = True
 
-try:
-    coordinates = open('/tmp/indi-status', 'w')
-    coordinates.truncate()
-    coordinates.write('1 0 0')
-    coordinates.close()
-except:
-    # Cannot open status file
-    time.sleep(2)
-    sys.exit(1)
+if not os.path.exists('/tmp/indi-status'):
+    try:
+        coordinates = open('/tmp/indi-status', 'w')
+        coordinates.truncate()
+        coordinates.write('1 0 0')
+        coordinates.close()
+    except:
+        # Cannot open status file
+        time.sleep(2)
+        sys.exit(1)
+
+else:
+    try:
+        coordinates = open('/tmp/indi-status', 'r')
+        status = coordinates.read().split(' ')
+        coordinates.close()
+        if len(status) == 3:
+            print 'statut file exists and is ok'
+            print 'status : {}'.format(status)
+            sys.exit(0)
+        else:
+            print 'status file exists but is not ok'
+            print 'status : {}'.format(status)
+            sys.exit(1)
+    except IOError:
+        # Cannot open status file
+        print 'Cannot open status file'
+        time.sleep(2)
+        sys.exit(1)
 
 sys.exit(0)
 
